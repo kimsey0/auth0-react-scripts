@@ -13,7 +13,7 @@ This repo is not a fork of `create-react-app`. It's just a fork of `react-script
 ## Setup
 
 ```
-create-react-app my-app --scripts-version amccloud-auth0-react-scripts
+create-react-app my-app --scripts-version auth0-react-scripts
 ```
 
 - Create a `.env` file at the root of the project with your Auth0 configurations. You can find your Auth0 clientId and domain at your dashboard: https://manage.auth0.com/#/clients
