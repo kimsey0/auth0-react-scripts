@@ -100,9 +100,10 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
     console.log('Success! Created ' + appName + ' at ' + appPath);
     console.log();
     console.log(chalk.red('IMPORTANT:'));
-    console.log('  Create an .env file at the root of your project. (see: .env.example)');
-    console.log('  You can find your Auth0 clientId and domain at your dashboard');
+    console.log('  Create an .env file at the root of your project with your Auth0 client ID and domain. (see: .env.example)');
+    console.log('  You can find these values in your Auth0 dashboard under application settings.');
     console.log('  https://manage.auth0.com/#/clients');
+    console.log('  You also need to set http://localhost:3000/login as an Allowed Callback URL in the settings.');
     console.log();
     console.log('Inside that directory, you can run several commands:');
     console.log();
