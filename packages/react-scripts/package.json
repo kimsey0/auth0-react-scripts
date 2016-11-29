@@ -1,5 +1,5 @@
 {
-  "name": "amccloud-auth0-react-scripts",
+  "name": "auth0-react-scripts",
   "version": "0.6.17",
   "description": "Auth0 configuration and scripts for Create React App.",
   "repository": "facebookincubator/create-react-app",
