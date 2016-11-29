@@ -6,6 +6,7 @@ import Auth0Lock from 'auth0-lock';
 
 const NEXT_PATH_KEY = 'next_path';
 const ID_TOKEN_KEY = 'id_token';
+const ACCESS_TOKEN_KEY = 'access_token';
 const PROFILE_KEY = 'profile';
 const LOGIN_ROUTE = '/login';
 const ROOT_ROUTE = '/';
@@ -26,9 +27,10 @@ const lock = new Auth0Lock(
 
 const events = new EventEmitter();
 
-lock.on('authenticated', ({idToken}) => {
-  setIdToken(idToken);
-  lock.getProfile(idToken, (error, profile) => {
+lock.on('authenticated', authResult => {
+  setIdToken(authResult.idToken);
+  setAccessToken(authResult.accessToken);
+  lock.getUserInfo(authResult.accessToken, (error, profile) => {
     if (error) { return setProfile({error}); }
     setProfile(profile);
     browserHistory.push(getNextPath());
@@ -120,7 +122,7 @@ function subscribeToProfile(subscription) {
   if (isLoggedIn()) {
     subscription(getProfile());
 
-    lock.getProfile(getIdToken(), (error, profile) => {
+    lock.getUserInfo(getAccessToken(), (error, profile) => {
       if (error) { return setProfile({error}); }
       setProfile(profile);
     });
@@ -165,8 +167,16 @@ function setIdToken(idToken) {
   localStorage.setItem(ID_TOKEN_KEY, idToken);
 }
 
+function setAccessToken(accessToken) {
+  localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
+}
+
 function getIdToken() {
   return localStorage.getItem(ID_TOKEN_KEY);
+}
+
+function getAccessToken() {
+  return localStorage.getItem(ACCESS_TOKEN_KEY);
 }
 
 function clearIdToken() {

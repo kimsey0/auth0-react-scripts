@@ -62,16 +62,6 @@ static propTypes = {
 
 A wrapper around [`window.fetch`](https://developer.mozilla.org/en-US/docs/Web/API/GlobalFetch) that will automatically set the `Authorization` header when a user is authenticated.
 
-## API Server
-
-While the API server in `src/api.js` is not required it exists to serve as a backend authentication example. It uses [`express-jwt`](https://github.com/auth0/express-jwt) to validate the `Authorization` header.
-
-### Running
-
-```
-npm run start:api
-```
-
 ## What is Auth0?
 
 Auth0 helps you to:

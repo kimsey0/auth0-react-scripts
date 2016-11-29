@@ -1,6 +1,6 @@
 {
   "name": "auth0-react-scripts",
-  "version": "0.6.17",
+  "version": "0.6.18",
   "description": "Auth0 configuration and scripts for Create React App.",
   "repository": "auth0-community/auth0-react-scripts",
   "license": "BSD-3-Clause",
