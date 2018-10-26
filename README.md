@@ -1,6 +1,6 @@
 # auth0-react-scripts
 
-Use [create-react-app](https://github.com/facebookincubator/create-react-app) to bootstrap a new React project with authentication.
+Use [create-react-app](https://github.com/facebook/create-react-app) to bootstrap a new React project with authentication.
 
 ## Example
 
@@ -12,6 +12,14 @@ This repo is not a fork of `create-react-app`. It's just a fork of `react-script
 
 ## Setup
 
+If you do not already have `create-react-app` installed, run:
+
+```
+npm install -g create-react-app
+```
+
+To create a new project:
+
 ```
 create-react-app my-app --scripts-version auth0-react-scripts
 ```
@@ -19,6 +27,13 @@ create-react-app my-app --scripts-version auth0-react-scripts
 - Create a `.env` file at the root of the project with your Auth0 configurations. You can find your Auth0 clientId and domain at your dashboard: https://manage.auth0.com/#/clients
 
 - Add `http://localhost:3000/login` to your [Auth0 callback URLs](https://manage.auth0.com/#/clients).
+
+Then, in order to start the app:
+
+```
+cd my-app/
+npm start
+```
 
 ## Auth Helpers
 
